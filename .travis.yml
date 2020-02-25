@@ -4,6 +4,7 @@ rust:
 cache: cargo
 script:
   - rustup component add rust-src
+  - rustup component add llvm-tools-preview
   - cargo install cargo-xbuild
   - cargo install bootimage
   - cargo xbuild --verbose --all
