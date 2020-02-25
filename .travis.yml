@@ -1,0 +1,14 @@
+language: rust
+rust:
+  - nightly
+cache: cargo
+script:
+  - cargo install cargo-xbuild
+  - cargo install bootimage
+  - cargo xbuild --verbose --all
+  - cargo xtest --verbose --all
+addons:
+  apt:
+    update: true
+    packages:
+    - qemu
