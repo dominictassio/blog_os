@@ -2,7 +2,7 @@
 #![no_main]
 #![feature(abi_x86_interrupt)]
 
-use blog_os::{exit_qemu, QemuExitCode, serial_print, serial_println};
+use blog_os::{exit_qemu, serial_print, serial_println, QemuExitCode};
 use core::panic::PanicInfo;
 use lazy_static::lazy_static;
 use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
@@ -25,7 +25,7 @@ pub fn init_test_idt() {
 
 #[allow(unconditional_recursion)]
 fn stack_overflow() {
-    stack_overflow();  // for each recursion, the return address is pushed
+    stack_overflow(); // for each recursion, the return address is pushed
 }
 
 #[no_mangle]
