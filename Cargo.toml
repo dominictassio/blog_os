@@ -17,6 +17,10 @@ test-timeout = 300
 name = "should_panic"
 harness = false
 
+[[test]]
+name = "stack_overflow"
+harness = false
+
 [dependencies]
 bootloader = "0.8.7"
 spin = "0.5.2"
