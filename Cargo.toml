@@ -22,13 +22,16 @@ name = "stack_overflow"
 harness = false
 
 [dependencies]
-bootloader = "0.8.7"
 pc-keyboard = "0.5.0"
 pic8259_simple = "0.1.1"
 spin = "0.5.2"
 uart_16550 = "0.2.3"
 volatile = "0.2.6"
 x86_64 = "0.9.3"
+
+[dependencies.bootloader]
+version = "0.8.7"
+features = ["map_physical_memory"]
 
 [dependencies.lazy_static]
 version = "1.4.0"
